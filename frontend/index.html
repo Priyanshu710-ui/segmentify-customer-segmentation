@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Segmentify | Customer Segmentation
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ◉
+            </div>
+
+            <span>
+                Segmentify
+            </span>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#dashboard">
+                Dashboard
+            </a>
+
+            <a href="#segments">
+                Segments
+            </a>
+
+            <a href="#insights">
+                Insights
+            </a>
+
+        </div>
+
+
+        <div class="live-status">
+
+            <span class="live-dot"></span>
+
+            Live Analysis
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section
+        id="dashboard"
+        class="hero"
+    >
+
+        <div class="hero-content">
+
+            <div class="badge">
+
+                ✦ MACHINE LEARNING
+                •
+                K-MEANS CLUSTERING
+
+            </div>
+
+
+            <h1>
+
+                Understand
+                <br>
+
+                Your
+                <br>
+
+                Customers.
+
+                <span>
+                    Grow Smarter.
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Upload your customer dataset
+                and discover meaningful customer
+                groups using machine learning.
+
+            </p>
+
+
+            <button
+                class="primary-btn"
+                onclick="scrollToUpload()"
+            >
+
+                Start Analysis →
+
+            </button>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>
+                    Total Customers
+                </span>
+
+                <h2 id="totalCustomers">
+                    0
+                </h2>
+
+                <p>
+                    Waiting for data
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    Customer Segments
+                </span>
+
+                <h2 id="totalSegments">
+                    0
+                </h2>
+
+                <p>
+                    AI-powered clusters
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    Model
+                </span>
+
+                <h2>
+                    K-Means
+                </h2>
+
+                <p>
+                    Machine Learning
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    Status
+                </span>
+
+                <h2 id="statusText">
+                    Ready
+                </h2>
+
+                <p>
+                    Upload CSV to begin
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= UPLOAD ================= -->
+
+    <section
+        id="uploadSection"
+        class="upload-section"
+    >
+
+        <div class="upload-card">
+
+            <div class="upload-icon">
+                ↑
+            </div>
+
+
+            <h2>
+                Upload Customer Dataset
+            </h2>
+
+
+            <p>
+
+                Select a CSV file containing
+                numerical customer data.
+
+            </p>
+
+
+            <label
+                for="fileInput"
+                class="file-button"
+            >
+
+                Choose CSV File
+
+            </label>
+
+
+            <input
+                type="file"
+                id="fileInput"
+                accept=".csv"
+            >
+
+
+            <p
+                id="fileName"
+                class="file-name"
+            >
+
+                No file selected
+
+            </p>
+
+
+            <button
+                id="analyzeBtn"
+                class="analyze-button"
+            >
+
+                ✦ Analyze Customers
+
+            </button>
+
+
+            <p
+                id="message"
+                class="message"
+            ></p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SEGMENTS ================= -->
+
+    <section
+        id="segments"
+        class="segments-section"
+    >
+
+        <div class="section-heading">
+
+            <span>
+                CUSTOMER SEGMENTS
+            </span>
+
+            <h2>
+                Discover Your Customers
+            </h2>
+
+            <p>
+                AI-generated customer groups based
+                on the uploaded dataset.
+            </p>
+
+        </div>
+
+
+        <div
+            id="segmentsContainer"
+            class="segments-grid"
+        >
+
+            <div class="empty-state">
+
+                Upload and analyze a dataset
+                to see customer segments.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= VISUALIZATION ================= -->
+
+    <section
+        id="insights"
+        class="visualization-section"
+    >
+
+        <div class="section-heading">
+
+            <span>
+                DATA INSIGHTS
+            </span>
+
+            <h2>
+                Visual Analysis
+            </h2>
+
+            <p>
+                Explore patterns generated by
+                the customer segmentation model.
+            </p>
+
+        </div>
+
+
+        <div class="charts-grid">
+
+            <div class="chart-card">
+
+                <h3>
+                    Customer Segments
+                </h3>
+
+                <img
+                    src="/outputs/segments.png"
+                    alt="Customer Segments"
+                >
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <h3>
+                    K Selection
+                </h3>
+
+                <img
+                    src="/outputs/k_selection.png"
+                    alt="K Selection"
+                >
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <h3>
+                    Correlation Heatmap
+                </h3>
+
+                <img
+                    src="/outputs/correlation_heatmap.png"
+                    alt="Correlation Heatmap"
+                >
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <h3>
+                    Customer Distributions
+                </h3>
+
+                <img
+                    src="/outputs/distributions.png"
+                    alt="Customer Distributions"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= DOWNLOAD ================= -->
+
+    <section class="download-section">
+
+        <div class="download-card">
+
+            <h2>
+                Download Results
+            </h2>
+
+            <p>
+
+                Download the dataset with
+                generated customer segments.
+
+            </p>
+
+
+            <a
+                href="/api/download"
+                class="download-button"
+            >
+
+                ↓ Download Segmented CSV
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
